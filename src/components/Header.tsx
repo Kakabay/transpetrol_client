@@ -1,19 +1,5 @@
+import { menuItems } from '../lib/database/Menu.data';
 import Container from './Container';
-
-const menuItems = [
-  {
-    title: 'Главная',
-    path: '/',
-  },
-  {
-    title: 'О компании',
-    path: '/',
-  },
-  {
-    title: 'Контакты',
-    path: '/',
-  },
-];
 
 const Header = () => {
   return (
