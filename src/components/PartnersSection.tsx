@@ -1,5 +1,6 @@
 import Container from './Container';
 import SectionTitle from './SectionTitle';
+import { v4 } from 'uuid';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -26,7 +27,7 @@ const partners = [
 
 const PartnersSection = () => {
   return (
-    <section className="mt-[150px]">
+    <section className="section-mb">
       <Container>
         <div className="flex flex-col w-full gap-[50px]">
           <SectionTitle title="Партнеры" position="center" />
@@ -39,7 +40,7 @@ const PartnersSection = () => {
             modules={[Pagination]}
             className="mySwiper h-[230px] w-full">
             {partners.map((item) => (
-              <SwiperSlide>
+              <SwiperSlide key={v4()}>
                 <img src={item} alt="" />
               </SwiperSlide>
             ))}

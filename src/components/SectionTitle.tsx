@@ -9,7 +9,7 @@ const SectionTitle = ({ title, position }: { title: string; position: 'center' |
         'items-start': position === 'left',
       })}>
       <h2 className="text-[32px] font-black italic uppercase">{title}</h2>
-      <div className="h-[5px] w-[80px] bg-[#FD4F00]"></div>
+      <div className="h-[5px] w-[80px] bg-[#FD4F00]" />
     </div>
   );
 };

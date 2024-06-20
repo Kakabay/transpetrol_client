@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { menuItems } from '../lib/database/Menu.data';
 import Container from './Container';
 
@@ -12,9 +13,9 @@ const Header = () => {
           <div className="flex items-center gap-[40px]">
             <nav className="flex items-center gap-[40px]">
               {menuItems.map((item, index) => (
-                <span className="text-[20px] text-black" key={index}>
+                <Link to={item.path} className="text-[20px] text-black" key={index}>
                   {item.title}
-                </span>
+                </Link>
               ))}
             </nav>
             <div className="flex items-center gap-[5px]">

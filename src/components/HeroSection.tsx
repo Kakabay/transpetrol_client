@@ -1,6 +1,11 @@
-const HeroSection = ({ img }: { img: string }) => {
+import clsx from 'clsx';
+
+const HeroSection = ({ img, mb }: { img: string; mb?: boolean }) => {
   return (
-    <div className="w-full h-[700px]">
+    <div
+      className={clsx('w-full h-full mx-auto', {
+        'section-mb': mb,
+      })}>
       <img src={img} alt="" className="w-full h-full object-cover" />
     </div>
   );

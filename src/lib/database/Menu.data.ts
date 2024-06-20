@@ -5,11 +5,11 @@ export const menuItems = [
   },
   {
     title: 'О компании',
-    path: '/',
+    path: '/company',
   },
   {
     title: 'Контакты',
-    path: '/',
+    path: '/contacts',
   },
 ];
 

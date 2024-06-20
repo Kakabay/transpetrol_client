@@ -81,3 +81,9 @@
     background-color: #fd4f00;
   }
 }
+
+@layer utilities {
+  .section-mb {
+    @apply mb-[150px];
+  }
+}

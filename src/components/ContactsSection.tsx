@@ -3,11 +3,9 @@ import Container from './Container';
 export const ContactsSection = () => {
   return (
     <div className="relative py-[110px]">
-      <img
-        src="/contacts.png"
-        alt=""
-        className="absolute left-0 top-0 mx-auto bottom-0 right-0 -z-10"
-      />
+      <div className="absolute left-0 top-0 mx-auto bottom-0 right-0 -z-10 w-full max-h-[700px]">
+        <img src="/contacts.png" alt="" className="w-full h-full" />
+      </div>
       <Container>
         <div className="pl-[50px] pt-[50px] pr-[30px] pb-[75px] bg-white w-fit rounded-[10px]">
           <div className="flex flex-col gap-[50px] w-[330px]">
@@ -43,15 +41,6 @@ export const ContactsSection = () => {
                 <div className="">
                   <h5 className="leading-[120%] text-[18px] font-semibold">Электронная Почта:</h5>
                   <p className="leading-[120%] ">transpetrol.info@gmail.com</p>
-                </div>
-              </div>
-
-              <div className="flex gap-[10px] items-start">
-                <img src="/contacts/4.svg" alt="" />
-
-                <div className="">
-                  <h5 className="leading-[120%] text-[18px] font-semibold">Сайт:</h5>
-                  <p className="leading-[120%] ">www.transpetrol.com</p>
                 </div>
               </div>
             </div>

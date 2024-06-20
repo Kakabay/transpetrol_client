@@ -1,13 +1,12 @@
-import React from 'react';
 import Button from './Button';
 import Container from './Container';
 import SectionTitle from './SectionTitle';
 
 const AboutSection = () => {
   return (
-    <div>
+    <div className="section-mb">
       <Container>
-        <div className="flex gap-[50px] mt-[150px] items-center">
+        <div className="flex gap-[50px] items-center">
           <div className="flex flex-col gap-[30px] max-w-[790px] w-full">
             <SectionTitle title="О КОМПАНИИ" position="left" />
             <div className="flex flex-col gap-[16px]">

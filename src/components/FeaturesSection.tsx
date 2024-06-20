@@ -32,9 +32,9 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section>
+    <section className="section-mb">
       <Container>
-        <div className="flex flex-col justify-center items-center gap-[100px] mt-[150px]">
+        <div className="flex flex-col justify-center items-center gap-[100px]">
           <SectionTitle title="Услуги" position="center" />
           <div className="grid w-full grid-cols-3 gap-[100px] content-between">
             {features.map((item, index) => (
