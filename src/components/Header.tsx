@@ -7,10 +7,17 @@ const Header = () => {
     <header>
       <Container>
         <div className="flex w-full justify-between items-center py-[20px]">
-          <div className="">
+          <div className="w-[240px] lg:w-[350px] h-full">
             <img src="/logo.svg" alt="logo" />
           </div>
-          <div className="flex items-center gap-[40px]">
+
+          <div className="lg:hidden size-8 flex flex-col gap-2 items-center justify-center">
+            <div className="w-6 h-[2px] bg-black"></div>
+            <div className="w-6 h-[2px] bg-black"></div>
+            <div className="w-6 h-[2px] bg-black"></div>
+          </div>
+
+          <div className="hidden lg:flex items-center gap-[40px]">
             <nav className="flex items-center gap-[40px]">
               {menuItems.map((item, index) => (
                 <Link to={item.path} className="text-[20px] text-black" key={index}>

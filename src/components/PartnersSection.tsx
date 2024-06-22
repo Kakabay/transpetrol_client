@@ -32,13 +32,25 @@ const PartnersSection = () => {
         <div className="flex flex-col w-full gap-[50px]">
           <SectionTitle title="Партнеры" position="center" />
           <Swiper
-            slidesPerView={6}
+            slidesPerView={3}
             spaceBetween={16}
+            slidesPerGroup={3}
             pagination={{
               clickable: true,
             }}
             modules={[Pagination]}
-            className="mySwiper h-[230px] w-full">
+            breakpoints={{
+              1024: {
+                slidesPerView: 6,
+                slidesPerGroup: 6,
+              },
+              768: {
+                slidesPerView: 4,
+                slidesPerGroup: 4,
+              },
+              300: { slidesPerView: 2, slidesPerGroup: 2 },
+            }}
+            className="h-[160px] md:h-[230px] flex items-center w-full gap-10">
             {partners.map((item) => (
               <SwiperSlide key={v4()}>
                 <img src={item} alt="" />

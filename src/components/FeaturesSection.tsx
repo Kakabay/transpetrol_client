@@ -36,7 +36,7 @@ const FeaturesSection = () => {
       <Container>
         <div className="flex flex-col justify-center items-center gap-[100px]">
           <SectionTitle title="Услуги" position="center" />
-          <div className="grid w-full grid-cols-3 gap-[100px] content-between">
+          <div className="grid w-full sm:grid-cols-2 grid-cols-1 md:grid-cols-3 gap-12 md:gap-20 lg:gap-[100px] content-between">
             {features.map((item, index) => (
               <FeatureCard img={item.img} title={item.title} key={index} />
             ))}
