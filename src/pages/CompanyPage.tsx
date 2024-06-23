@@ -1,11 +1,17 @@
-import { useEffect } from 'react';
-import Container from '../components/Container';
-import HeroSection from '../components/HeroSection';
-import SectionTitle from '../components/SectionTitle';
+import { useEffect } from "react";
+import Container from "../components/Container";
+import HeroSection from "../components/HeroSection";
+import SectionTitle from "../components/SectionTitle";
+import { useZusBurger } from "../zustand/useZusBurger";
+import { useTranslate } from "../utils/useTranslate";
+import { aboutDataEn, aboutDataRu } from "../lib/database/About.data";
 
 const CompanyPage = () => {
+  const setBurgerOpen = useZusBurger((state) => state.setBurgerOpen);
+
   useEffect(() => {
     window.scroll(0, 0);
+    setBurgerOpen(false);
   }, []);
 
   return (
@@ -14,47 +20,17 @@ const CompanyPage = () => {
 
       <Container>
         <section className="section-mb">
-          <SectionTitle position="left" title="О КОМПАНИИ" />
+          <SectionTitle
+            title={useTranslate("About company", "О КОМПАНИИ")}
+            position="left"
+          />
 
-          <div className="flex flex-col gap-6 mt-[30px] text-[20px]">
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-              accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-              sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-              aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-              rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-              amet.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-              accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-              sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-              aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-              rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-              amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-              tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
-              eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-              takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-              consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-              dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-              ipsum dolor sit amet.
-            </p>
-            <p>- Lorem ipsum - Dolores et ea rebum. - Invidunt ut labore et dolore magna </p>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-              accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-              sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-              aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-              rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit{' '}
-            </p>
-          </div>
+          <div
+            className="p flex pt-10 flex-col gap-6"
+            dangerouslySetInnerHTML={{
+              __html: useTranslate(aboutDataEn, aboutDataRu),
+            }}
+          />
         </section>
       </Container>
 

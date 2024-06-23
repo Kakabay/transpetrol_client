@@ -1,48 +1,59 @@
-import { Link } from 'react-router-dom';
-import { menuItems } from '../lib/database/Menu.data';
-import Container from './Container';
+import { Link } from "react-router-dom";
+import { menuItems } from "../lib/database/Menu.data";
+import Container from "./Container";
+import { LangMenu } from "./LangMenu";
+import { useZusBurger } from "../zustand/useZusBurger";
+import { Burger } from "./Burger";
+import clsx from "clsx";
+import { useZusLang } from "../zustand/useZusLang";
 
 const Header = () => {
+  const activeLang = useZusLang((state) => state.activeLang.id);
+  const burgerOpen = useZusBurger((state) => state.burgerOpen);
+  const setBurgerOpen = useZusBurger((state) => state.setBurgerOpen);
+
   return (
-    <header>
-      <Container>
-        <div className="flex w-full justify-between items-center py-[20px]">
-          <div className="w-[240px] lg:w-[350px] h-full">
-            <img src="/logo.svg" alt="logo" />
-          </div>
+    <>
+      <header
+        className={clsx("shadow-lg relative z-10", {
+          "fixed top-0 left-0 right-0": burgerOpen,
+        })}
+      >
+        <Burger />
+        <Container>
+          <div className="flex w-full justify-between items-center py-[20px]">
+            <div className="w-[240px] lg:w-[350px] h-full">
+              <img src="/logo.svg" alt="logo" />
+            </div>
 
-          <div className="lg:hidden size-8 flex flex-col gap-2 items-center justify-center">
-            <div className="w-6 h-[2px] bg-black"></div>
-            <div className="w-6 h-[2px] bg-black"></div>
-            <div className="w-6 h-[2px] bg-black"></div>
-          </div>
+            <div
+              onClick={() => setBurgerOpen(!burgerOpen)}
+              className="lg:hidden size-8 flex flex-col gap-2 items-center justify-center cursor-pointer"
+            >
+              <div className={clsx("w-6 h-[2px] bg-black")}></div>
+              <div className="w-6 h-[2px] bg-black"></div>
+              <div className="w-6 h-[2px] bg-black"></div>
+            </div>
 
-          <div className="hidden lg:flex items-center gap-[40px]">
-            <nav className="flex items-center gap-[40px]">
-              {menuItems.map((item, index) => (
-                <Link to={item.path} className="text-[20px] text-black" key={index}>
-                  {item.title}
-                </Link>
-              ))}
-            </nav>
-            <div className="flex items-center gap-[5px]">
-              <span className="text-[20px] text-black">Русский</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="8.486"
-                height="8.486"
-                viewBox="0 0 8.486 8.486">
-                <path
-                  id="Dropdown"
-                  d="M.5,6A.5.5,0,0,1,0,5.5V.5a.5.5,0,1,1,1,0V5H5.5a.5.5,0,1,1,0,1Z"
-                  transform="translate(0 4.243) rotate(-45)"
-                />
-              </svg>
+            <div className="hidden lg:flex items-center gap-[40px]">
+              <nav className="flex items-center gap-[40px]">
+                {menuItems.map((item, index) => (
+                  <Link
+                    to={item.path}
+                    className="text-[20px] text-black"
+                    key={index}
+                  >
+                    {(activeLang === "en" && item.titleEn) ||
+                      (activeLang === "ru" && item.title)}
+                  </Link>
+                ))}
+              </nav>
+              <LangMenu />
             </div>
           </div>
-        </div>
-      </Container>
-    </header>
+        </Container>
+      </header>
+    </>
   );
 };
 

@@ -1,19 +1,27 @@
-import { Link } from 'react-router-dom';
-import { footerItems, menuItems } from '../lib/database/Menu.data';
-import Container from './Container';
+import { Link } from "react-router-dom";
+import { footerItems, menuItems } from "../lib/database/Menu.data";
+import Container from "./Container";
+import { useZusLang } from "../zustand/useZusLang";
 
 export const Footer = () => {
+  const activeLang = useZusLang((state) => state.activeLang.id);
+
   return (
     <footer className="bg-white py-10 md:py-20 lg:py-[100px]">
       <Container>
         <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-0">
-          <img src="/logo.svg" alt="logo" className="w-[240px] 2xl:w-[350px] h-full" />
+          <img
+            src="/logo.svg"
+            alt="logo"
+            className="w-[240px] 2xl:w-[350px] h-full"
+          />
           <div className="flex justify-between gap-10 lg:flex-row flex-col 2xl:justify-between">
             <div className="flex gap-6 ">
               <div className="flex flex-col gap-5 mr-10">
                 {menuItems.map((item) => (
                   <Link to={item.path} key={item.title}>
-                    {item.title}
+                    {(activeLang === "en" && item.titleEn) ||
+                      (activeLang === "ru" && item.title)}
                   </Link>
                 ))}
               </div>

@@ -1,28 +1,28 @@
-import Container from './Container';
-import SectionTitle from './SectionTitle';
-import { v4 } from 'uuid';
+import Container from "./Container";
+import SectionTitle from "./SectionTitle";
+import { v4 } from "uuid";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/pagination";
 
-import { Pagination } from 'swiper/modules';
+import { Pagination } from "swiper/modules";
 
 const partners = [
-  '/partner1.jpg',
-  '/partner2.jpg',
-  '/partner3.jpg',
-  '/partner4.jpg',
-  '/partner5.jpg',
-  '/partner6.jpg',
-  '/partner1.jpg',
-  '/partner2.jpg',
-  '/partner3.jpg',
-  '/partner4.jpg',
-  '/partner5.jpg',
-  '/partner6.jpg',
+  "/partner1.jpg",
+  "/partner2.jpg",
+  "/partner3.jpg",
+  "/partner4.jpg",
+  "/partner5.jpg",
+  "/partner6.jpg",
+  "/partner1.jpg",
+  "/partner2.jpg",
+  "/partner3.jpg",
+  "/partner4.jpg",
+  "/partner5.jpg",
+  "/partner6.jpg",
 ];
 
 const PartnersSection = () => {
@@ -50,7 +50,8 @@ const PartnersSection = () => {
               },
               300: { slidesPerView: 2, slidesPerGroup: 2 },
             }}
-            className="h-[160px] md:h-[230px] flex items-center w-full gap-10">
+            className="h-[220px] md:h-[230px] flex items-center w-full gap-10"
+          >
             {partners.map((item) => (
               <SwiperSlide key={v4()}>
                 <img src={item} alt="" />

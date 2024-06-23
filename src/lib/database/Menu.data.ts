@@ -1,29 +1,32 @@
 export const menuItems = [
   {
-    title: 'Главная',
-    path: '/',
+    title: "Главная",
+    titleEn: "Home",
+    path: "/",
   },
   {
-    title: 'О компании',
-    path: '/company',
+    title: "О компании",
+    titleEn: "About company",
+    path: "/company",
   },
   {
-    title: 'Контакты',
-    path: '/contacts',
+    title: "Контакты",
+    titleEn: "Contacts",
+    path: "/contacts",
   },
 ];
 
 export const footerItems = [
   {
-    title: 'Представительства',
-    path: '',
+    title: "Представительства",
+    path: "",
   },
   {
-    title: 'Партнеры',
-    path: '',
+    title: "Партнеры",
+    path: "",
   },
   {
-    title: 'Контакты',
-    path: '',
+    title: "Контакты",
+    path: "",
   },
 ];

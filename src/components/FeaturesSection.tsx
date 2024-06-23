@@ -1,32 +1,31 @@
-import React from 'react';
-import Container from './Container';
-import FeatureCard from './FeatureCard';
-import SectionTitle from './SectionTitle';
+import Container from "./Container";
+import FeatureCard from "./FeatureCard";
+import SectionTitle from "./SectionTitle";
 
 const features = [
   {
-    img: '/features1.png',
-    title: 'Торговля нефтью',
+    img: "/features1.png",
+    title: "Базовая нефть",
   },
   {
-    img: '/features2.png',
-    title: 'Торговля смазочными Материалами',
+    img: "/features2.png",
+    title: "Смазочные материалы",
   },
   {
-    img: '/features3.png',
-    title: 'Торговля удобрениями',
+    img: "/features3.png",
+    title: "Удобрения",
   },
   {
-    img: '/features4.png',
-    title: 'Торговля Бензином',
+    img: "/features4.png",
+    title: "Бензин",
   },
   {
-    img: '/features5.png',
-    title: 'Торговля дизельным Топливом',
+    img: "/features5.png",
+    title: "Дизельное топливо",
   },
   {
-    img: '/features6.png',
-    title: 'Торговля авиационным Топливом',
+    img: "/features6.png",
+    title: "Авиационное топливо",
   },
 ];
 

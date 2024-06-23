@@ -1,6 +1,8 @@
-import Button from './Button';
-import Container from './Container';
-import SectionTitle from './SectionTitle';
+import { aboutDataEn, aboutDataRu } from "../lib/database/About.data";
+import { useTranslate } from "../utils/useTranslate";
+import Button from "./Button";
+import Container from "./Container";
+import SectionTitle from "./SectionTitle";
 
 const AboutSection = () => {
   return (
@@ -8,30 +10,17 @@ const AboutSection = () => {
       <Container>
         <div className="flex xl:flex-row flex-col gap-[50px] items-center">
           <div className="flex flex-col gap-[30px] max-w-[790px] w-full">
-            <SectionTitle title="О КОМПАНИИ" position="left" />
+            <SectionTitle
+              title={useTranslate("About company", "О КОМПАНИИ")}
+              position="left"
+            />
 
-            <div className="flex flex-col gap-[16px]">
-              <p className="p">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
-                eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-                dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-                ipsum dolor sit amet.
-              </p>
-              <p className="p">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
-                eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-                dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-                ipsum dolor sit amet.
-              </p>
-            </div>
+            <div
+              className="p flex flex-col gap-6"
+              dangerouslySetInnerHTML={{
+                __html: useTranslate(aboutDataEn, aboutDataRu),
+              }}
+            />
 
             <div className="xl:hidden max-w-[800px] max-h-[506px]">
               <img src="/about.jpg" alt="" className="w-full h-full" />
