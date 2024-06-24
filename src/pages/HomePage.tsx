@@ -16,7 +16,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="overflow-hidden">
+    <div className="main">
       <HeroSection img="/3.png" mb />
       <AboutSection />
       <FeaturesSection />

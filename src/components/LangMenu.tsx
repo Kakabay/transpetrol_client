@@ -1,5 +1,4 @@
 import { useZusLang } from "../zustand/useZusLang";
-import clsx from "clsx";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
@@ -59,7 +58,7 @@ export const LangMenu = () => {
           <motion.div
             initial={{
               opacity: 0,
-              y: -5,
+              y: -10,
             }}
             animate={{
               opacity: 1,
@@ -67,7 +66,7 @@ export const LangMenu = () => {
             }}
             exit={{
               opacity: 0,
-              y: -5,
+              y: -10,
             }}
             ref={langRef}
             className="flex absolute bg-white shadow-2xl gap-3 flex-col rounded-[3px]"
@@ -80,10 +79,7 @@ export const LangMenu = () => {
                     setActiveLang(lang);
                     setLangOpen(false);
                   }}
-                  className={clsx(
-                    "cursor-pointer p-3 hover:bg-white rounded-md",
-                    {}
-                  )}
+                  className="cursor-pointer p-3 hover:bg-white rounded-md"
                 >
                   {lang.view}
                 </motion.div>
